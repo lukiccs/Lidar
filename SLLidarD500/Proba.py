@@ -4,7 +4,7 @@ import Filter
 import Parsiranje
 import matplotlib.pyplot as plt
 import numpy as np
-import Plotovanje
+# import Plotovanje
 
 PORT = 'COM10'
 BAUDRATE = 230400

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-def sredjivanjePlot(x, y):
+def sredjivanjePlot(i, x, y):
     plt.cla()
     plt.scatter(x, y)
 
