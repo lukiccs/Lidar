@@ -1,3 +1,13 @@
 import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib.animation import FuncAnimation
+
+
+def sredjivanjePlot(x, y):
+    plt.cla()
+    plt.scatter(x, y)
+
+ani = FuncAnimation(plt.gcf(), sredjivanjePlot, interval=100)
+plt.show()
+    
+    
 
