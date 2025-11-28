@@ -28,35 +28,23 @@ def parsiranje(paket, prosliUgao):
                         korakInterpolacijeUgla  = (end_angle - start_angle + 360) % 360 / (brojTacaka - 1)
 
 
-                  
-                        # ugao = (start_angle + i * korakInterpolacijeUgla) % 360
-                        # if prosliUgao is None:
-                        #       krug.append((distance, ugao))
-                        #       prosliUgao = ugao
-                        # if ugao < prosliUgao:
-                        #       krug.clear()
-                        #       print("-----------------NOVI KRUG!--------------------")
-                        #       krug.append((distance, ugao))
-                        # elif ugao >= prosliUgao:
-                        #       krug.append((distance, ugao))
-                        # prosliUgao = ugao
-
-
                   for i, ugao in enumerate(ocitanaRastojanja):
+                        if ocitanaRastojanjaNP[i] < 50:
+                              return False
                         ugao = (start_angle + i * korakInterpolacijeUgla) % 360
                         if prosliUgao is None:
                               krugNP[i, 0] = ocitanaRastojanjaNP[i]
                               krugNP[i, 1] = ugao
-                              krug.append((ocitanaRastojanja[i], ugao))
+                              # krug.append((ocitanaRastojanja[i], ugao))
                               prosliUgao = ugao
                         if ugao < prosliUgao:
-                              krug.clear()
+                              # krug.clear()
                               print("-----------------NOVI KRUG!--------------------")
-                              krug.append((ocitanaRastojanja[i], ugao))
+                              # krug.append((ocitanaRastojanja[i], ugao))
                               krugNP[i, 0] = ocitanaRastojanjaNP[i]
                               krugNP[i, 1] = ugao
                         elif ugao > prosliUgao:
-                              krug.append((ocitanaRastojanja[i], ugao))
+                              # krug.append((ocitanaRastojanja[i], ugao))
                               krugNP[i, 0] = ocitanaRastojanjaNP[i]
                               krugNP[i, 1] = ugao
                         prosliUgao = ugao

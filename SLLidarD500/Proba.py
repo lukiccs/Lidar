@@ -16,9 +16,12 @@ with serial.Serial(PORT, BAUDRATE, timeout=1) as ser:
         while True:
             paket = ser.read(46)
             krug = Parsiranje.parsiranje(paket, prosliUgao)
-            if krug is not None:
+            if krug is False:
+                pass
+                
+            else: 
                 print(krug)
                 prosliUgao = krug[-1][1]
-            Parsiranje.proba()
+            # Parsiranje.proba()
     except KeyboardInterrupt:
         print("GOTOVO")
